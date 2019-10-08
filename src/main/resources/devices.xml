@@ -1,0 +1,9 @@
+<devices>
+    <device>
+        <deviceName>Galaxy S6 edge</deviceName>
+        <platformVersion>7.0</platformVersion>
+        <platformName>Android</platformName>
+        <udid>02157df29091da1d</udid>
+        <serverPort>4724</serverPort>
+    </device>
+</devices>
