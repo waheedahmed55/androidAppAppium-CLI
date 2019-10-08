@@ -3,7 +3,6 @@ package io.appium.config;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import io.appium.java_client.service.local.flags.IOSServerFlag;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -41,7 +40,7 @@ public class AppiumServer {
         AppiumServiceBuilder builder = new AppiumServiceBuilder()
                 .withIPAddress(SERVER_IP)
                 .usingPort(serverPort)
-                .withArgument(GeneralServerFlag.LOG_LEVEL, "debug")
+                .withArgument(GeneralServerFlag.LOG_LEVEL, "info")
                 .withArgument(GeneralServerFlag.ASYNC_TRACE)
                 .withArgument(GeneralServerFlag.SESSION_OVERRIDE)
                 .withArgument(GeneralServerFlag.RELAXED_SECURITY)

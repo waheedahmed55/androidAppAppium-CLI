@@ -22,7 +22,8 @@ public class InformationPageTest extends BaseTest {
 
         Assert.assertTrue(isEmailButtonIsDisplayed);
     }
-    @Test
+
+    @Test (priority = 1)
     public void activityFieldTest(){
         InformationPage informationPage = navigateToMainPage()
                 .navigateToInformationPage();
@@ -40,7 +41,7 @@ public class InformationPageTest extends BaseTest {
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void numOfKhudFieldTest(){
         InformationPage informationPage = navigateToMainPage()
                 .navigateToInformationPage();
@@ -58,7 +59,7 @@ public class InformationPageTest extends BaseTest {
 
     }
 
-    @Test
+    @Test (priority = 3)
     public void activiyDescpFieldTest(){
         InformationPage informationPage = navigateToMainPage()
                 .navigateToInformationPage();
