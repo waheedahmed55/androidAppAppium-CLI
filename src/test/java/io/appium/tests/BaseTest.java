@@ -1,16 +1,15 @@
 package io.appium.tests;
 
 
-import io.appium.config.AppiumDriverConfig;
-import io.appium.config.AppiumServer;
-import io.appium.config.Device;
-import io.appium.config.DevicesConfig;
+import io.appium.config.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.pages.MainPage;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +19,7 @@ public class BaseTest {
     private AppiumServer server;
     private AppiumDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() {
         List<Device> devices = DevicesConfig.devices;
 
@@ -36,10 +35,15 @@ public class BaseTest {
         }
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void shutdown(ITestResult result){
         attachScreenshotAndFiles(result);
         stopAppium();
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite(){
+        AllureHelper.addEnvironmentParamsInReport();
     }
 
     private void stopAppium() {
