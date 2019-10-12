@@ -38,6 +38,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void shutdown(ITestResult result){
         attachScreenshotAndFiles(result);
+        driver.closeApp();
         stopAppium();
     }
 
