@@ -2,7 +2,6 @@ package io.appium.config;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -63,8 +62,11 @@ public class AppiumDriverConfig {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, device.platformVersion);
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device.deviceName);
         capabilities.setCapability(MobileCapabilityType.UDID, device.udid);
-        capabilities.setCapability("appActivity", "com.ottawaeast.mka.reprotingappv10.MainActivity");
-        capabilities.setCapability("appPackage", "com.ottawaeast.mka.reprotingappv10");
+
+//        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true); //if application is already installed and dont want to re-install
+//        capabilities.setCapability(MobileCapabilityType.APP,"C:\\Users\\user\\IdeaProjects\\appium\\app\\sendinformationEmail.apk");//If application new build is available set path for it
+       capabilities.setCapability("appActivity", "com.ottawaeast.mka.reprotingappv10.MainActivity");
+       capabilities.setCapability("appPackage", "com.ottawaeast.mka.reprotingappv10");
 
         return capabilities;
     }
